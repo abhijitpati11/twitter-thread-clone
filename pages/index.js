@@ -30,8 +30,7 @@ const index = () => {
           <Feed />
           <Trending />
           {appContext?.isModalOpen && <Modal />}
-        </div>
-        
+        </div> 
       </main>
     </div> 
   )

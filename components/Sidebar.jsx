@@ -14,9 +14,13 @@ const Sidebar = () => {
  const { data:session } = useSession();
  const router = useRouter()
 
-  const homeClick = () => {
-    router.push('/')
-  }
+  const homeClick = () => router.push('/');
+
+  const trending = () => router.push('/trending');
+  
+  const profile = () => router.push('/profile');
+  
+  const more = () => router.push('/more');
 
   return (
     <div className='hidden sm:flex flex-col items-center 
@@ -33,13 +37,13 @@ const Sidebar = () => {
       <div onClick={homeClick}>
         <SidebarLink text="Home" Icon={AiFillHome} />
       </div>
-      <SidebarLink text="Trending" Icon={BiHash} />
-      <SidebarLink text="Notifications" Icon={BsBell} />
-      <SidebarLink text="Messages" Icon={AiOutlineInbox} />
-      <SidebarLink text="Bookmarks" Icon={BsBookmark} />
-      <SidebarLink text="Lists" Icon={HiOutlineClipboardList} />
-      <SidebarLink text="Profile" Icon={AiOutlineUser} />
-      <SidebarLink text="More" Icon={HiOutlineDotsCircleHorizontal} />
+      <p onClick={trending}><SidebarLink text="Trending" Icon={BiHash} /></p>
+      <p><SidebarLink text="Notifications" Icon={BsBell} /></p>
+      <p><SidebarLink text="Messages" Icon={AiOutlineInbox} /></p>
+      <p><SidebarLink text="Bookmarks" Icon={BsBookmark} /></p>
+      <p><SidebarLink text="Lists" Icon={HiOutlineClipboardList} /></p>
+      <p onClick={profile}><SidebarLink text="Profile" Icon={AiOutlineUser} /></p>
+      <p onClick={more}><SidebarLink text="More" Icon={HiOutlineDotsCircleHorizontal} /></p>
      </div>
 
      {/* tweet button */}
